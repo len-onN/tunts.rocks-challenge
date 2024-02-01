@@ -1,6 +1,6 @@
 # Tunts.Rocks Challenge Repository
 
-Welcome to the Tunts.Rocks Challenge repository! This repository contains the code for a specific challenge.
+Welcome to the Tunts.Rocks Challenge repository! This repository contains the code for a specific challenge, required during a selection process for a internship position at Tunts.Rocks!
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ git clone git@github.com:len-onN/tunts.rocks-challenge.git
 
 ### Changing Directory
 
-Navigate into the cloned repository using the fallowing command:
+Navigate into the cloned repository using the following command:
 
 ```bash
 cd tunts.rocks-challenge
@@ -45,13 +45,14 @@ cd tunts.rocks-challenge
 ```
 
 ## Step 3: Create a Virtual Enviroment
-Run the fallowing command to create a virtual envrioment:
+Run the following command to create a virtual envrioment:
 
 #### On Linux or macOS:
 
 ```bash
 python3 -m venv .venv
 ```
+
 #### On Windows:
 
 ```bash
@@ -87,7 +88,7 @@ In order to achieve it, it's necessary o use the 'pip install' command for the '
 pip install -r requirements.txt
 ```
 ## Step 6: Run the tests!
-In order to see tests, go to the file "test_app.py", there you'll see 3 tests, each one related to one of the desigend functions to perform the challenge, respecting it's given contraints. In order to run the tests, execute the fallowing commands in your prompt, or terminal:
+In order to see tests, go to the file "test_app.py", there you'll see 3 tests, each one related to one of the desigend functions to perform the challenge, respecting it's given contraints. In order to run the tests, execute the following commands in your prompt, or terminal:
 
 ```bash
 pytest test_app.py
@@ -95,7 +96,7 @@ pytest test_app.py
 
 
 ## Step 7: Running the code - reading, processing and updating a given xlsx spreadsheet file!
-In order to run the code, and fill the fields "Situação" and "Nota para Aprovação Final" execute the fallowing commands in your prompt, or terminal:
+In order to run the code, and fill the fields "Situação" and "Nota para Aprovação Final" execute the following commands in your prompt, or terminal:
 
 ```bash
 python app.py
