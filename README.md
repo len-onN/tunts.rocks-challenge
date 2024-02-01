@@ -121,6 +121,12 @@ pytest test_app.py
 ## Step 7: Running the code - reading, processing and updating a given xlsx spreadsheet file!
 In order to run the code, and fill the fields "Situação" and "Nota para Aprovação Final" execute the following commands in your prompt, or terminal:
 
+#### On Linux/macOS:
+```bash
+python3 app.py
+```
+
+#### On Windows:
 ```bash
 python app.py
 ```
