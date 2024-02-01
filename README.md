@@ -86,20 +86,27 @@ In order to achieve it, it's necessary o use the 'pip install' command for the '
 ```bash
 pip install -r requirements.txt
 ```
+## Step 6: Run the tests!
+In order to see tests, go to the file "test_app.py", there you'll see 3 tests, each one related to one of the desigend functions to perform the challenge, respecting it's given contraints. In order to run the tests, execute the fallowing commands in your prompt, or terminal:
 
-## Step 6: Running the code - reading, processing and updating a given xlsx spreadsheet file!
+```bash
+pytest test_app.py
+```
+
+
+## Step 7: Running the code - reading, processing and updating a given xlsx spreadsheet file!
 In order to run the code, and fill the fields "Situação" and "Nota para Aprovação Final" execute the fallowing commands in your prompt, or terminal:
 
 ```bash
 python app.py
 ```
 
-## Step 7: Deactivate the Virtual Enviroment
+## Step 8: Deactivate the Virtual Enviroment
 Once finished the update of the spreadsheet, it's time to deactivate the virtual enviroment:
 
 ```bash
 deactivate
 ```
 
-## Introduction to gspread Library
+# Introduction to gspread Library
 The code in this repository utilizes the gspread library, a Python library that simplifies the interaction with Google Sheets. It allows for reading and writing data to Google Sheets, making it convenient for handling spreadsheet data in a Google Sheets environment. To explore more about gspread, refer to the  [gspread documentation](https://docs.gspread.org/en/latest/index.html).
