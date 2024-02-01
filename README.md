@@ -10,6 +10,29 @@ Follow the steps below to clone this repository to your local machine.
 
 Make sure you have Git installed on your machine. If not, you can download it from [https://git-scm.com/](https://git-scm.com/).
 
+### Sheet Access for the script
+Log in your Google Account, then open the following [Spreadsheet](https://docs.google.com/spreadsheets/d/1XvWJcRLj2WAeXO3ULQ_GxGm9---3SZkjMbGcXMJtt70/edit#gid=0).
+Click in "File".
+Click in "Make a Copy".
+Change the name of the copy to "Engenharia de Software - Desafio Lenon Fernandes Philippi".
+Click in "Make a Copy".
+Then the page for the Copy'll be opened, once opened, click in Share (positioned at the right corner of the screen), in General Access change to Edit.
+Open [Google Cloud Page](https://console.cloud.google.com/).
+Click in "Select a project".
+Click in "New Project".
+Give a name to the project.
+In "Search Field" look for Google Sheet Api, then activate it.
+In "Search File" look for Google Drive Api, then activate it.
+In "Api and actiavated services", look for Google Sheets API link, and open it.
+Click in "Create Credentials".
+Choose the "App data"/"service account" option.
+Set the name for the service account.
+In "Selection Role" session, choose "Edit" option.
+Continue.
+Finish the account, then click in "Credentials", in the left corner of the screen.
+In "Service Accounts" session, click in the recently created account.
+Click in "Key" session, then "Add Key" - choose JSON option -> in this moment, a json file'll be downloaded to you download directory, you should rename this file to "credentials.json" then make a copy of it in the root directory of the project.
+
 ### Cloning the Repository
 
 Open your terminal or command prompt.
