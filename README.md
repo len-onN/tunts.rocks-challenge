@@ -101,5 +101,5 @@ Once finished the update of the spreadsheet, it's time to deactivate the virtual
 deactivate
 ```
 
-## Introduction to openpyxl Library
-The code in this repository utilizes the openpyxl library, a powerful Python library for reading and writing Excel files. It provides functionalities to manipulate Excel spreadsheets, making it easier to work with data in Excel format. To learn more about openpyxl, visit [openpyxl documentation](https://openpyxl.readthedocs.io/).
+## Introduction to gspread Library
+The code in this repository utilizes the gspread library, a Python library that simplifies the interaction with Google Sheets. It allows for reading and writing data to Google Sheets, making it convenient for handling spreadsheet data in a Google Sheets environment. To explore more about gspread, refer to the  [gspread documentation](https://docs.gspread.org/en/latest/index.html).
