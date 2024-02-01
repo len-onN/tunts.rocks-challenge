@@ -1,38 +1,39 @@
 import openpyxl
 from math import ceil
+import gspread
+
+spreadsheet = gspread.service_account(filename="credentials.json")
+working_sheet = spreadsheet.open('Engenharia de Software - Desafio Lenon Fernandes Philippi')
+print(working_sheet.get_worksheet_by_id(0))
 
 # Load the workbook
-workbook = openpyxl.load_workbook("Engenharia de Software - Desafio Lenon Fernandes Philippi.xlsx")
+# workbook = openpyxl.load_workbook("Engenharia de Software - Desafio Lenon Fernandes Philippi.xlsx")
 
 # Select the "engenharia_de_software" sheet
-sheet = workbook["engenharia_de_software"]
+sheet = working_sheet.get_worksheet_by_id(0)
 
-# Iterate through each row starting from the 4th row
-for row in range(4, sheet.max_row + 1):
-    # Step 1: Check for "Reprovado por Falta"
-    absence = sheet.cell(row=row, column=3).value
-    if absence > 0.25 * 60:  # 25% of 60 classes
-        sheet.cell(row=row, column=7, value="Reprovado por Falta")  # Set the column for "Situação"
-        sheet.cell(row=row, column=8, value=0)  # Set the column for Nota para Aprovação Final
+values = sheet.get_all_values()
+
+for row in range(3, len(values)):
+    enrollment = int(values[row][0])
+    absences = int(values[row][2])
+    p1, p2, p3 = map(int, values[row][3:6])
+
+    if absences > 0.25 * 60:
+        situation = "Reprovado por Falta"
+        final_grade = 0
     else:
-        # Step 2: Calculate the average of P1, P2, and P3
-        p1 = sheet.cell(row=row, column=4).value  # P1
-        p2 = sheet.cell(row=row, column=5).value  # P2
-        p3 = sheet.cell(row=row, column=6).value  # P3
         average = ceil(((p1 + p2 + p3) / 3) / 10)
 
-        # Check for "Reprovado por Nota"
         if average < 5:
-            sheet.cell(row=row, column=7, value="Reprovado por Nota")  # Set the column for "Situação"
-            sheet.cell(row=row, column=8, value=0)  # Set the column for Nota para Aprovação Final
+            situation = "Reprovado por Nota"
+            final_grade = 0
         elif 5 <= average < 7:
-            # Check for "Exame Final"
-            sheet.cell(row=row, column=7, value="Exame Final")  # Set the column for "Situação"
-            sheet.cell(row=row, column=8, value=(10 - average))  # Set the column for Nota para Aprovação Final
+            situation = "Exame Final"
+            naf = 10 - average
+            final_grade = naf
         else:
-            # Aprovado
-            sheet.cell(row=row, column=7, value="Aprovado")  # Set the column for "Situação"
-            sheet.cell(row=row, column=8, value=0)  # Set the column for Nota para Aprovação Final
-
-# Save the changes
-workbook.save("Engenharia de Software - Desafio Lenon Fernandes Philippi.xlsx")
+            situation = "Aprovado"
+            final_grade = 0
+    sheet.update_cell(row + 1, 7, situation)
+    sheet.update_cell(row + 1, 8, final_grade)
